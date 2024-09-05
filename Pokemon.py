@@ -60,3 +60,16 @@ class Pokemon:
                     Pokemon2.defense /= 2
                     string_1_attack = '\nIts super effective!'
                     string_2_attack = '\nIts not very effective...'
+
+          while (self.bars > 0) and (Pokemon2.bars > 0):
+            # Print the health of each pokemon
+            print(f"\n{self.name}\t\tHLTH\t{self.health}")
+            print(f"{Pokemon2.name}\t\tHLTH\t{Pokemon2.health}\n")
+
+            print(f"Go {self.name}!")
+            for i, x in enumerate(self.moves):
+                print(f"{i+1}.", x)
+            index = int(input('Pick a move: '))
+            delay_print(f"\n{self.name} used {self.moves[index-1]}!")
+            time.sleep(1)
+            delay_print(string_1_attack)
