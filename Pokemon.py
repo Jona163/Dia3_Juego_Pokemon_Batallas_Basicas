@@ -1,3 +1,8 @@
+# Autor: Jonathan Hernández
+# Fecha: 04 Septiembre 2024
+# Descripción: Código para una simulación de batalla Pokémon de estilo retro
+# GitHub: https://github.com/Jona163
+
 import time
 import numpy as np
 import sys
