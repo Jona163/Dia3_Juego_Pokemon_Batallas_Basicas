@@ -90,3 +90,34 @@ class Pokemon:
             if Pokemon2.bars <= 0:
                 delay_print("\n..." + Pokemon2.name + ' fainted.')
                 break
+
+ 
+
+            print(f"Go {Pokemon2.name}!")
+            for i, x in enumerate(Pokemon2.moves):
+                print(f"{i+1}.", x)
+            index = int(input('Pick a move: '))
+            delay_print(f"\n{Pokemon2.name} used {Pokemon2.moves[index-1]}!")
+            time.sleep(1)
+            delay_print(string_2_attack)
+
+           
+            self.bars -= Pokemon2.attack
+            self.health = ""
+
+           
+            for j in range(int(self.bars+.1*self.defense)):
+                self.health += "="
+
+            time.sleep(1)
+            print(f"{self.name}\t\tHLTH\t{self.health}")
+            print(f"{Pokemon2.name}\t\tHLTH\t{Pokemon2.health}\n")
+            time.sleep(.5)
+
+            
+            if self.bars <= 0:
+                delay_print("\n..." + self.name + ' fainted.')
+                break
+
+        money = np.random.choice(5000)
+        delay_print(f"\nOpponent paid you ${money}.\n")
