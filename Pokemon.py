@@ -11,7 +11,7 @@ def delay_print(s):
     
 class Pokemon:
     def __init__(self, name, types, moves, EVs, health='==================='):
-        # save variables as attributes
+        
         self.name = name
         self.types = types
         self.moves = moves
@@ -35,3 +35,28 @@ class Pokemon:
         print("LVL/", 3*(1+np.mean([Pokemon2.attack,Pokemon2.defense])))
 
         time.sleep(2)
+      version = ['Fire', 'Water', 'Grass']
+        for i,k in enumerate(version):
+            if self.types == k:
+              
+                if Pokemon2.types == k:
+                    string_1_attack = '\nIts not very effective...'
+                    string_2_attack = '\nIts not very effective...'
+
+               
+                if Pokemon2.types == version[(i+1)%3]:
+                    Pokemon2.attack *= 2
+                    Pokemon2.defense *= 2
+                    self.attack /= 2
+                    self.defense /= 2
+                    string_1_attack = '\nIts not very effective...'
+                    string_2_attack = '\nIts super effective!'
+
+              
+                if Pokemon2.types == version[(i+2)%3]:
+                    self.attack *= 2
+                    self.defense *= 2
+                    Pokemon2.attack /= 2
+                    Pokemon2.defense /= 2
+                    string_1_attack = '\nIts super effective!'
+                    string_2_attack = '\nIts not very effective...'
