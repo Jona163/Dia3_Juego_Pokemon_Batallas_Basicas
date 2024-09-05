@@ -73,3 +73,20 @@ class Pokemon:
             delay_print(f"\n{self.name} used {self.moves[index-1]}!")
             time.sleep(1)
             delay_print(string_1_attack)
+
+
+            Pokemon2.bars -= self.attack
+            Pokemon2.health = ""
+
+            
+            for j in range(int(Pokemon2.bars+.1*Pokemon2.defense)):
+                Pokemon2.health += "="
+
+            time.sleep(1)
+            print(f"\n{self.name}\t\tHLTH\t{self.health}")
+            print(f"{Pokemon2.name}\t\tHLTH\t{Pokemon2.health}\n")
+            time.sleep(.5)
+
+            if Pokemon2.bars <= 0:
+                delay_print("\n..." + Pokemon2.name + ' fainted.')
+                break
